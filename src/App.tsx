@@ -1,9 +1,14 @@
 import './App.css';
 
+// Lessons import
+import Lesson006 from './lessons/Lesson006/Lesson006';
+
+
+
 function App() {
   return (
     <div className="App">
-      <p>My React-TS project</p>
+     <Lesson006/>
     </div>
   );
 }
