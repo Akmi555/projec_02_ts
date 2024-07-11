@@ -1,6 +1,7 @@
 import "./styles.css";
+import { User } from "./tyoes";
 
-function ProfileCard() {
+function ProfileCard(): User {
     const userData = {
         avatar:
           "https://img.freepik.com/premium-vector/men-women-different-poses-sitting-standing-isolated-white-background-cute-flat-style-vector-illustration_71599-9116.jpg?w=740",

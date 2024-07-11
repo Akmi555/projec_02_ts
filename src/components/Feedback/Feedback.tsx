@@ -6,14 +6,14 @@ function Feedback() {
   const [countLike, setLikeCount] = useState(0);
   const [countDislike, setDislikeCount] = useState(0);
 
-  const onLikeClick = () => {
+  const onLikeClick = (): void => {
     setLikeCount((prevValue) => prevValue + 1);
   };  
 
-  const onDislikeClick = () => {
+  const onDislikeClick = (): void => {
     setDislikeCount((prevValue) => prevValue + 1);
   };
-  const onResetResults = () => {
+  const onResetResults = (): void => {
     setLikeCount(0);
     setDislikeCount(0);
   };

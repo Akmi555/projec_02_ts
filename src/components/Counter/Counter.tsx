@@ -5,11 +5,11 @@ import { useState } from "react";
 function Counter() {
   const [count, setCount] = useState(0);
 
-  const onMinusClick = () => {
+  const onMinusClick = (): void => {
     setCount((prevValue) => prevValue - 1);
   };
 
-  const onPlusClick = () => {
+  const onPlusClick = (): void => {
     setCount((prevValue) => prevValue + 1);
   };
 
