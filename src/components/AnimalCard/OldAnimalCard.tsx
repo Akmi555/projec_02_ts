@@ -1,6 +1,7 @@
 import "./styles.css";
+import {OldAnimalCardProps} from './tyoes';
 
-function OldAnimalCard({ animalName, species, role, animalImg, children}) {
+function OldAnimalCard({ animalName, species, role, animalImg, children}: OldAnimalCardProps) {
   return (
     <div className="animal-card-wrapper">
       <h2>{animalName}</h2>

@@ -1,6 +1,7 @@
 import "./styles.css";
+import { InputProps } from "./tyoes";
 
-function Input({ label, type, name, placeholder, id}) {
+function Input({ label, type, name, placeholder, id}: InputProps) {
   return (
     <div className="input-container">
       <label htmlFor={id}>{label}</label>

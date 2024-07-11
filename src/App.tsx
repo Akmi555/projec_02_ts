@@ -1,7 +1,5 @@
 import "./App.css";
 
-
-
 // Lessons import
 // import Lesson006 from './lessons/Lesson006/Lesson006';
 
