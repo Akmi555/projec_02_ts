@@ -3,8 +3,8 @@ import Button from "../Button/Button";
 import "./styles.css";
 
 function Feedback() {
-  const [countLike, setLikeCount] = useState(0);
-  const [countDislike, setDislikeCount] = useState(0);
+  const [countLike, setLikeCount] = useState<number>(0);
+  const [countDislike, setDislikeCount] = useState<number>(0);
 
   const onLikeClick = (): void => {
     setLikeCount((prevValue) => prevValue + 1);

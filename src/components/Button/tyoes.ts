@@ -1,5 +1,7 @@
+type ButtonTypes = "button" | "submit" | "reset";
+
 export interface ButtonProps {
   name: string;
-  type?: "button" | "submit" | "reset";
+  type?: ButtonTypes;
   onButtonClick?: () => void;
 }

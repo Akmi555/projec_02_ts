@@ -1,14 +1,14 @@
 import "./styles.css";
 import { User } from "./tyoes";
 
-function ProfileCard(): User {
-    const userData = {
-        avatar:
-          "https://img.freepik.com/premium-vector/men-women-different-poses-sitting-standing-isolated-white-background-cute-flat-style-vector-illustration_71599-9116.jpg?w=740",
-        userName: "John Doe",
-        profession: "Web Developer",
-        hobbies: ["Reading", "Traveling", "Photography"],
-      };
+function ProfileCard() {
+  const userData: User = {
+    avatar:
+      "https://img.freepik.com/premium-vector/men-women-different-poses-sitting-standing-isolated-white-background-cute-flat-style-vector-illustration_71599-9116.jpg?w=740",
+    userName: "John Doe",
+    profession: "Web Developer",
+    hobbies: ["Reading", "Traveling", "Photography"],
+  };
   return (
     <div className="profile-card">
       <h1 className="user-name">{userData.userName}</h1>
