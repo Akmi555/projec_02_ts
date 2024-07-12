@@ -1,0 +1,11 @@
+.csr-component{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgb(3, 163, 168);
+    width: 300px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
