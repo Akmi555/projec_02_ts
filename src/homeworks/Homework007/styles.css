@@ -1,0 +1,25 @@
+.homework007-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 10px;
+  padding: 40px;
+  background-color: rgba(104, 109, 8, 0.427);
+}
+
+.csr-component {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    min-width: 300px;
+    min-height: 300px;
+    border-radius: 6px;
+    background-color: rgb(3, 163, 168);
+    color: rgb(3, 12, 109);
+    font-size: 24px;
+}
