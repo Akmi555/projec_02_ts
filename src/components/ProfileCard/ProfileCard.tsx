@@ -1,5 +1,5 @@
 import "./styles.css";
-import { User } from "./tyoes";
+import { User } from "./types";
 
 function ProfileCard() {
   const userData: User = {

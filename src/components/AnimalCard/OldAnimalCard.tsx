@@ -1,5 +1,5 @@
 import "./styles.css";
-import {OldAnimalCardProps} from './tyoes';
+import {OldAnimalCardProps} from './types';
 
 function OldAnimalCard({ animalName, species, role, animalImg, children}: OldAnimalCardProps) {
   return (
