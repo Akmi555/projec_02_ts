@@ -1,6 +1,8 @@
+type Price = number|string;
+
 export interface Car {
     brand: string;
-    price: number|string;
+    price: Price;
     isDiesel?: boolean;
 
 }
