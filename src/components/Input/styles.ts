@@ -6,10 +6,12 @@ export const InputContainer = styled.div`
   gap: 4px;
   width: 100%;
 `
+
 export const Label = styled.label`
   font-size: 16px;
   color: #6f6f6f;
 `
+
 export const InputElement = styled.input`
   width: 100%;
   height: 50px;
