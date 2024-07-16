@@ -1,26 +1,18 @@
 import {CounterComponent, ButtonWrapper, CounterResult} from "./styles";
 import Button from "../Button/Button";
-import { useState } from "react";
+import { CounterProps } from "./types";
 
-function Counter() {
-  const [count, setCount] = useState<number>(0);
+function Counter({count, onMinus, onPlus}: CounterProps) {
 
-  const onMinusClick = (): void => {
-    setCount((prevValue) => prevValue - 1);
-  };
-
-  const onPlusClick = (): void => {
-    setCount((prevValue) => prevValue + 1);
-  };
 
   return (
     <CounterComponent>
       <ButtonWrapper>
-        <Button name="-" onButtonClick={onMinusClick} />
+        <Button name="-" onButtonClick={onMinus} />
       </ButtonWrapper>
       <CounterResult>{count}</CounterResult>
       <ButtonWrapper>
-        <Button name="+" onButtonClick={onPlusClick} />
+        <Button name="+" onButtonClick={onPlus} />
       </ButtonWrapper>
     </CounterComponent>
   );
