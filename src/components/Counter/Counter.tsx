@@ -1,4 +1,4 @@
-import "./styles.css";
+import {CounterComponent, ButtonWrapper, CounterResult} from "./styles";
 import Button from "../Button/Button";
 import { useState } from "react";
 
@@ -14,15 +14,15 @@ function Counter() {
   };
 
   return (
-    <div className="counter-component">
-      <div className="button-wrapper">
+    <CounterComponent>
+      <ButtonWrapper>
         <Button name="-" onButtonClick={onMinusClick} />
-      </div>
-      <div className="counter-result">{count}</div>
-      <div className="button-wrapper">
+      </ButtonWrapper>
+      <CounterResult>{count}</CounterResult>
+      <ButtonWrapper>
         <Button name="+" onButtonClick={onPlusClick} />
-      </div>
-    </div>
+      </ButtonWrapper>
+    </CounterComponent>
   );
 }
 
