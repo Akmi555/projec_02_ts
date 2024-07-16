@@ -1,44 +1,34 @@
-import { useState } from "react";
+import { FeedbackProps } from "./types";
 import Button from "../Button/Button";
-import{FeedbackComponent, 
-  FeedbackResultComponent, 
+import {
+  FeedbackComponent,
+  FeedbackResultComponent,
   LikeDislikeComponent,
-  Fontesult
+  Fontesult,
 } from "./styles";
 
-function Feedback() {
-  const [countLike, setLikeCount] = useState<number>(0);
-  const [countDislike, setDislikeCount] = useState<number>(0);
-
-  const onLikeClick = (): void => {
-    setLikeCount((prevValue) => prevValue + 1);
-  };  
-
-  const onDislikeClick = (): void => {
-    setDislikeCount((prevValue) => prevValue + 1);
-  };
-  const onResetResults = (): void => {
-    setLikeCount(0);
-    setDislikeCount(0);
-  };
-
+function Feedback(
+  {countLike, 
+  countDislike, 
+  onLike, 
+  onDislike, 
+  onReset}: FeedbackProps
+) {
+  
 
   return (
     <FeedbackComponent>
       <FeedbackResultComponent>
         <LikeDislikeComponent>
-          <div className="fesult">{countLike}</div>
-          <Button name="LIKE" onButtonClick={onLikeClick} />
+          <Fontesult>{countLike}</Fontesult>
+          <Button name="LIKE" onButtonClick={onLike} />
         </LikeDislikeComponent>
         <LikeDislikeComponent>
-          <Button name="DISLIKE" onButtonClick={onDislikeClick} />
-          <div className="fesult">{countDislike}</div>
+          <Button name="DISLIKE" onButtonClick={onDislike} />
+          <Fontesult>{countDislike}</Fontesult>
         </LikeDislikeComponent>
       </FeedbackResultComponent>
-
-      <div>
-        <Button name="RESET RESULT" onButtonClick={onResetResults} />
-      </div>
+      <Button name="RESET RESULT" onButtonClick={onReset} />
     </FeedbackComponent>
   );
 }
