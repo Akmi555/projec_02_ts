@@ -4,7 +4,8 @@ export const FeedbackComponent = styled.div`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width: 800px;
+    min-width: 300px;
+    max-width: 800px;
     padding: 20px;
     background-color: rgb(222, 9, 9);
 `

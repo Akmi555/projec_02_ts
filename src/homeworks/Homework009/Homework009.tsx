@@ -1,6 +1,7 @@
 import { Homework009Component } from "./styles";
 import { useState } from "react";
 import Feedback from "../../components/Feedback/Feedback";
+import ResultBlock from "../../components/ResultBlock/ResultBlock";
 
 function Homework009() {
     const [countLike, setLikeCount] = useState<number>(0);
@@ -27,6 +28,8 @@ function Homework009() {
         onDislike={onDislikeClick}
         onReset={onResetResults}
         />
+        <ResultBlock resultName="likes" result={countLike}/>
+        <ResultBlock resultName="dislikes" result={countDislike}/>
     </Homework009Component>
     )
 }

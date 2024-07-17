@@ -11,7 +11,7 @@ function LoginForm() {
     <LoginFormWrapper>
       <LoginFormTitle>Login Form</LoginFormTitle>
       <InputsContainer>
-        <Input
+        {/* <Input
           id="email"
           name="user_email"
           label="Email"
@@ -24,7 +24,7 @@ function LoginForm() {
           label="Password"
           type="password"
           placeholder="Enter your password"
-        />
+        /> */}
       </InputsContainer>
       <Button name="Login" type="submit" />
     </LoginFormWrapper>
