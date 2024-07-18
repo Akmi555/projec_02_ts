@@ -17,6 +17,7 @@ gap: 30px;
 min-width: 400px;
 max-width: 600px;
 padding: 20px;
+border: 2px solid #1A9892;
 `
 
 export const ResultWrapper = styled.div`

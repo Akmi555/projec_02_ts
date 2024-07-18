@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import { CounterProps } from "./types";
 
 function Counter({count, onMinus, onPlus}: CounterProps) {
-
+// console.log(count);
 
   return (
     <CounterComponent>

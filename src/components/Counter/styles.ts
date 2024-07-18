@@ -11,11 +11,9 @@ export const CounterComponent = styled.div`
     border-radius: 6px;
 `
 
-
 export const ButtonWrapper = styled.div`
     width: 100px;
 `
-
 
 export const CounterResult = styled.div`
     width: 100px;
