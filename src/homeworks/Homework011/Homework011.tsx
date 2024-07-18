@@ -1,10 +1,11 @@
 import { ChangeEvent, useEffect, useState } from "react";
 import Input from "../../components/Input/Input";
-import { Homework011Component, FormWrapper } from "./styles";
+import { Homework011Component, FormWrapper, DogImg } from "./styles";
 
 function Homework011() {
   const [example1Value, setExample1Value] = useState<string>("");
   const [example2Value, setExample2Value] = useState<string>("");
+  const [dogImageUrl, setDogImageUrl] = useState<string>('')
 
   const changeExample1 = (event: ChangeEvent<HTMLInputElement>) => {
     setExample1Value(event.target.value);
@@ -17,13 +18,25 @@ function Homework011() {
   const getDog = async () => {
     try {
         const response = await fetch('https://dog.ceo/api/breeds/image/random')
+        console.log(response);        
         const result = await response.json();
-        console.log(result);        
-    } catch (error) {}
+        console.log(result);  
+        
+        if (!response.ok) {
+          // логику ошибки
+          throw Object.assign(new Error('API ERROR'), {errorObj: result})
+        }else{
+          // логику при успешном завершении запроса
+          setDogImageUrl(result.message)       
+        }
+    } catch (error) {
+      console.log(error);      
+    } finally{
+      console.log('Spinner stop');      
+    }
   };
 
   useEffect(() => {
-    console.log("test");
     getDog();
   }, [example1Value]);
 
@@ -42,6 +55,7 @@ function Homework011() {
           value={example2Value}
           onChange={changeExample2}
         />
+        <DogImg src={dogImageUrl} alt="random dog"/>
       </FormWrapper>
     </Homework011Component>
   );
