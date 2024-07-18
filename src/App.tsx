@@ -1,4 +1,5 @@
 
+
 import GlobalStyles from "./styes/GlobalStyles";
 
 // Lessons import
@@ -17,6 +18,9 @@ import GlobalStyles from "./styes/GlobalStyles";
 // import Homework010 from "./homeworks/Homework010/Homework010";
 import Homework011 from "./homeworks/Homework011/Homework011";
 
+// Consultations import
+// import Consultation04 from "./consultations/Consultations04/Consultation04";
+
 function App() {
   return (
     <>
@@ -33,6 +37,7 @@ function App() {
       {/* <Homework010/> */}
       {/* <Lesson011/> */}
       <Homework011/>
+      {/* <Consultation04/> */}
     </>
   );
 }
