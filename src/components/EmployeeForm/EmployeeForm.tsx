@@ -21,6 +21,8 @@ function EmployeeForm() {
     },
   });
 
+  console.log(formik);
+
   return (
     <EmployeeFormWrapper onSubmit={formik.handleSubmit}>
       <EmployeeFormTitle>Employee Form</EmployeeFormTitle>
