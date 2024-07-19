@@ -28,13 +28,15 @@ function EmployeeForm() {
       <EmployeeFormTitle>Employee Form</EmployeeFormTitle>
       <InputsContainer>
         <Input
+          id="employee_name_id"
           label="EmployeeName"
           name={EMPLOYEE_FORM_NAME.NAME}
-          placeholder="Enter your Name"
+          placeholder="Enter employee Name"
           value={formik.values[EMPLOYEE_FORM_NAME.NAME]}
           onChange={formik.handleChange}
         />
         <Input
+          id="employee_surname_id"
           label="SurName"
           name={EMPLOYEE_FORM_NAME.SURNAME}
           placeholder="Enter your SurName"
@@ -42,6 +44,7 @@ function EmployeeForm() {
           onChange={formik.handleChange}
         />
         <Input
+          id="employee_job_id"
           label="JobTitle"
           name={EMPLOYEE_FORM_NAME.JOBTITLE}
           placeholder="Enter your JobTitle"
@@ -50,7 +53,7 @@ function EmployeeForm() {
         />
       </InputsContainer>
 
-      <Button name="Employee Form" type="submit" />
+      <Button name="Create" type="submit" />
     </EmployeeFormWrapper>
   );
 }
