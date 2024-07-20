@@ -17,7 +17,7 @@ function Homework011() {
 
   const getDog = async () => {
     try {
-        const response = await fetch('https://dog.ceo/api/breeds/image/random')
+        const response = await fetch('https://catfact.ninja/fact')
         console.log(response);        
         const result = await response.json();
         console.log(result);  
