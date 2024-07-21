@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import Button from "components/Button/Button";
-import { Lesson013_P_Component } from "./styles";
+import { Lesson013_P_Component, ResultWrapper } from "./styles";
 import ResultBlock from "components/ResultBlock/ResultBlock";
 import { v4 } from "uuid";
 
@@ -40,11 +40,12 @@ function Lesson013_P() {
     return (
     <Lesson013_P_Component>
         <Button name="GET MORE INFO" onButtonClick={getInfoCat}/>
-        {/* {render} */}
-        {resultValue  && <ResultBlock result={resultValue}/>}
-
-
-        {resultValue && <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat}/>}         
+        {resultValue  && <ResultWrapper>
+             {/* {render} */}
+        <ResultBlock result={resultValue}/>
+        <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat}/>
+        </ResultWrapper>}
+                
     </Lesson013_P_Component>
     )
 }

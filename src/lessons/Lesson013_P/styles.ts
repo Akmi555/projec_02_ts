@@ -9,4 +9,10 @@ export const Lesson013_P_Component = styled.div`
   padding: 40px;
   border: 2px solid #229699;
   border-radius: 3px;
-`;
+`
+export const ResultWrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 30px;
+`
