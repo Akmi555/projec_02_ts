@@ -36,9 +36,10 @@ function Lesson013_P() {
     <Lesson013_P_Component>
       <Button name="GET MORE INFO" onButtonClick={getInfoCat} />
       {/* {render} */}
-      <ResultBlock result={resultValue} />
-      {resultValue.length > 0 && (
-        <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat} />
+      {resultValue.length > 0 && (<ResultWrapper>
+          <ResultBlock result={resultValue} />
+          <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat} />
+        </ResultWrapper>
       )}
     </Lesson013_P_Component>
   );
