@@ -6,16 +6,16 @@ import ResultBlock from "components/ResultBlock/ResultBlock";
 import { v4 } from "uuid";
 
 function Lesson013_P() {
-  const [resultValue, setResultValue] = useState<[]>([]);
+  const [resultValue, setResultValue] = useState<string[]>([]);
 
   const getInfoCat = async () => {
     const response = await fetch("https://catfact.ninja/fact");
     // console.log(response);
     const result = await response.json();
-    console.log(result);
-    // setResultValue(result.map((element)=>element.fact))
-    setResultValue(result.fact);
-    // setResultValue(element=>[...element, result.fact])
+    // console.log(result);
+    // setResultValue(result.fact);
+    setResultValue((element) => [...element, result.fact]); // расширение массива и 
+                                                    //добавление в него result.fact
   };
 
   useEffect(() => {
@@ -28,16 +28,18 @@ function Lesson013_P() {
 
   console.log(resultValue);
 
-  // const render = resultValue.map((renderValue) => {
-  //   return (<ResultBlock key={v4()} result={renderValue}/>);
-  // })
+  const render = resultValue.map((renderValue, index) => {
+    return <ResultBlock resultName={`${index + 1}`} key={v4()} result={renderValue} />;
+  });
 
   return (
     <Lesson013_P_Component>
       <Button name="GET MORE INFO" onButtonClick={getInfoCat} />
-      {/* {render} */}
-      {resultValue.length > 0 && (<ResultWrapper>
-          <ResultBlock result={resultValue} />
+
+      {resultValue.length > 0 && (
+        <ResultWrapper>
+          {render}
+          {/* <ResultBlock result={resultValue} /> */}
           <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat} />
         </ResultWrapper>
       )}
