@@ -5,49 +5,43 @@ import { Lesson013_P_Component, ResultWrapper } from "./styles";
 import ResultBlock from "components/ResultBlock/ResultBlock";
 import { v4 } from "uuid";
 
-
 function Lesson013_P() {
-    const [resultValue, setResultValue] = useState<[]>([])
+  const [resultValue, setResultValue] = useState<[]>([]);
 
+  const getInfoCat = async () => {
+    const response = await fetch("https://catfact.ninja/fact");
+    // console.log(response);
+    const result = await response.json();
+    console.log(result);
+    // setResultValue(result.map((element)=>element.fact))
+    setResultValue(result.fact);
+    // setResultValue(element=>[...element, result.fact])
+  };
 
-    const getInfoCat = async () => {
-        const response = await fetch('https://catfact.ninja/fact')   
-        // console.log(response);            
-        const result = await response.json();
-        console.log(result);
-        setResultValue(result.map((element)=>element.fact))
-        // setResultValue(result.fact)
-    }
+  useEffect(() => {
+    getInfoCat();
+  }, []);
 
-    useEffect(()=>{
-        getInfoCat()
-    },[])
+  const deletInfoCat = () => {
+    setResultValue([]);
+  };
 
-    const deletInfoCat = () => {
-        setResultValue([])
-    }
+  console.log(resultValue);
 
-    console.log(resultValue);
-    
+  // const render = resultValue.map((renderValue) => {
+  //   return (<ResultBlock key={v4()} result={renderValue}/>);
+  // })
 
-    // const render = resultValue.map((renderValue) => {
-    //   return (<ResultBlock key={v4()} result={renderValue}/>);
-    // })
-    
-
-    
-
-    return (
+  return (
     <Lesson013_P_Component>
-        <Button name="GET MORE INFO" onButtonClick={getInfoCat}/>
-        {resultValue  && <ResultWrapper>
-             {/* {render} */}
-        <ResultBlock result={resultValue}/>
-        <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat}/>
-        </ResultWrapper>}
-                
+      <Button name="GET MORE INFO" onButtonClick={getInfoCat} />
+      {/* {render} */}
+      <ResultBlock result={resultValue} />
+      {resultValue.length > 0 && (
+        <Button name="DELETE ALL DATA" onButtonClick={deletInfoCat} />
+      )}
     </Lesson013_P_Component>
-    )
+  );
 }
 
 export default Lesson013_P;
