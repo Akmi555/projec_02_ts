@@ -16,7 +16,7 @@ function Lesson013_P() {
         const result = await response.json();
         console.log(result);
         setResultValue(result.map((element)=>element.fact))
-        
+        // setResultValue(result.fact)
     }
 
     useEffect(()=>{
