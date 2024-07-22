@@ -1,4 +1,4 @@
 export interface ResultBlockProps {
-    resultName: string;
-    result: string | number
+    resultName?: string;
+    result: string | number | []
 }
