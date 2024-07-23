@@ -19,7 +19,7 @@ import GlobalStyles from "./styes/GlobalStyles";
 // import Homework010 from "./homeworks/Homework010/Homework010";
 // import Homework011 from "./homeworks/Homework011/Homework011";
 // import Homework012 from "homeworks/Homework012/Homework012";
-import Homework014 from "homeworks/Homework014/Homework012";
+import Homework014 from "homeworks/Homework014/Homework014";
 
 // Consultations import
 // import Consultation04 from "./consultations/Consultations04/Consultation04";

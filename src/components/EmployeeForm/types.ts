@@ -2,7 +2,8 @@ export interface EmployeeFormValues {
   employeeName: string;
   employeeSurName: string;
   jobTitle: string;
-  salary: number;
+  salary: string;
+  agree: boolean;
 }
 
 export enum EMPLOYEE_FORM_NAME {
@@ -10,4 +11,5 @@ export enum EMPLOYEE_FORM_NAME {
   SURNAME = "employeeSurName",
   JOBTITLE = "jobTitle",
   SALARY = "salary",
+  AGREE = "agree",
 }
