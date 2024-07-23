@@ -13,7 +13,7 @@ function LoginForm() {
     .required('Field email required') // меод обязательности
     .email('Field type email') // метод тип эмэил
     .min(4, 'Min 4 symbols') // метод минемального количества символов
-    .max(7, 'Max 7 symbol'), // метод максимального количества символов
+    .max(7, 'Max 7 symbols'), // метод максимального количества символов
     [LOGIN_FORM_NAME.PASSWORD]: Yup.number()
     .required('Field password required')
     .typeError('Password must be number') // метод вывода ошибки
