@@ -1,4 +1,3 @@
-
 import GlobalStyles from "./styes/GlobalStyles";
 
 // Lessons import
@@ -10,7 +9,7 @@ import GlobalStyles from "./styes/GlobalStyles";
 // import Lesson011 from "./lessons/Lesson011/Lesson011";
 // import Lesson012 from "./lessons/Lesson012/Lesson012";
 // import Lesson013_P from "lessons/Lesson013_P/Lesson013_P";
-import Lesson014 from "lessons/Lesson014/Lesson014";
+// import Lesson014 from "lessons/Lesson014/Lesson014";
 
 //Homeworks import
 // import Homework006 from "./homeworks/Homework006/Homework006";
@@ -20,6 +19,7 @@ import Lesson014 from "lessons/Lesson014/Lesson014";
 // import Homework010 from "./homeworks/Homework010/Homework010";
 // import Homework011 from "./homeworks/Homework011/Homework011";
 // import Homework012 from "homeworks/Homework012/Homework012";
+import Homework014 from "homeworks/Homework014/Homework014";
 
 // Consultations import
 // import Consultation04 from "./consultations/Consultations04/Consultation04";
@@ -44,7 +44,8 @@ function App() {
       {/* <Lesson012/> */}
       {/* <Homework012/> */}
       {/* <Lesson013_P/> */}
-      <Lesson014/>
+      {/* <Lesson014/> */}
+      <Homework014/>
     </>
   );
 }

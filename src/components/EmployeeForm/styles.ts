@@ -10,6 +10,21 @@ export const EmployeeFormWrapper = styled.form`
   border-radius: 3px;
 `;
 
+export const CheckboxContainer = styled.div`
+ display: flex;
+ align-items: center;
+ gap: 10px;
+`
+
+export const CheckboxLabel = styled.label`
+font-size: 20px;
+`
+
+export const Checkbox = styled.input`
+  width: 25px;
+  height: 25px;
+`
+
 export const EmployeeFormTitle = styled.div`
   font-size: 24px;
   font-weight: bold;
