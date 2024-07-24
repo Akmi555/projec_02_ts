@@ -8,9 +8,10 @@ import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
 import About from "pages/About/About";
 import Clients from "pages/Clients/Clients";
-import Hammer from "pages/Clients/Hammer/Hammer";
-import Robot from "pages/Clients/Robot/Robot";
-import Wheel from "pages/Clients/Wheel/Wheel";
+import Hammer from "pages/Clients/components/Hammer/Hammer";
+import Robot from "pages/Clients/components/Robot/Robot";
+import Wheel from "pages/Clients/components/Wheel/Wheel";
+
 
 
 // Lessons import
@@ -59,16 +60,17 @@ function App() {
       {/* <Lesson013_P/> */}
       {/* <Lesson014/> */}
       {/* <Homework014/> */}
-      {/* Lesson015 example with pages */}
+      {/* Lesson015 end Homework015 example with pages */}
       <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/users" element={<Users/>}/>
           <Route path="/about" element={<About/>}/>
-          <Route path="/clients" element={<Clients/>}/>\
+          <Route path="/clients" element={<Clients/>}/>
           <Route path="/clients/hammer" element={<Hammer/>}/>
           <Route path="/clients/robot" element={<Robot/>}/>
           <Route path="/clients/wheel" element={<Wheel/>}/>
+          <Route path="*" element={'Page not Found'}/>
         </Routes>
       </Layout>
     </BrowserRouter>

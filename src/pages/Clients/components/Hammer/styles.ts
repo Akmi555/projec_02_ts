@@ -1,19 +1,21 @@
 import styled from "@emotion/styled";
-import {Link} from "react-router-dom";
 
-export const ClientsPage = styled.div`
+export const HammerPage = styled.div`
  display: flex;
  flex-direction: column;
  justify-content: center;
  gap: 30px;
  flex: 1;
+ padding: 30px;
 `
 
 export const Title = styled.h1`
   font-size: 30px
 `
-export const StyledLink = styled(Link)`
-  text-decoration: none;
-  font-size: 24px;
-  font-weight: bold
+
+export const Description = styled.div`
+  font-size: 20px;
+`
+export const GoBackButtonWrapper = styled.div`
+  width: fit-content;
 `

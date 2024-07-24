@@ -1,15 +1,20 @@
-import { Footer, Header, HeaderLogo, LayoutComponent, Main, NavContainer, StyledNavLink } from "./styles"
+import { Footer, Header, HeaderLogo, LayoutComponent, Main, NavContainer} from "./styles"
 import Avatar from 'assets/free-icon-avatars-4725937.png'
 import { LayoutProps } from "./types"
+import NavigationLink from "components/NavigationLink/NavigationLink"
+import { Link, useNavigate } from "react-router-dom"
 
 function Layout({children}: LayoutProps) {
-
+const navigate = useNavigate()
   return (
     <LayoutComponent>
       <Header>
+        <Link to='/'>
         <HeaderLogo src={Avatar} />
+        </Link>
+        
         <NavContainer>
-            <StyledNavLink 
+            {/* <StyledNavLink 
               to='/'
               style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}
             >Home</StyledNavLink>
@@ -24,12 +29,16 @@ function Layout({children}: LayoutProps) {
             <StyledNavLink 
               to='/clients'
               style={({ isActive }) => ({ textDecoration: isActive ? 'underline' : 'none' })}
-            >Clients</StyledNavLink>
+            >Clients</StyledNavLink> */}
+            <NavigationLink path="/" nameLink="Home"/>
+            <NavigationLink path="/users" nameLink="Users"/>
+            <NavigationLink path="/about" nameLink="About"/>
+            <NavigationLink path="/clients" nameLink="Clients"/>
         </NavContainer>
       </Header>
       <Main>{children}</Main>
       <Footer>
-        <HeaderLogo src={Avatar} />
+        <HeaderLogo src={Avatar} onClick={()=> navigate('/')}/>
       </Footer>
     </LayoutComponent>
   )

@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const HammerPage = styled.div`
+export const RobotPage = styled.div`
  display: flex;
  flex-direction: column;
  justify-content: center;
@@ -10,4 +10,7 @@ export const HammerPage = styled.div`
 
 export const Title = styled.h1`
   font-size: 30px
+`
+export const Description = styled.div`
+  font-size: 20px;
 `

@@ -18,6 +18,7 @@ export const Header = styled.header`
 export const HeaderLogo = styled.img`
   width: 50px;
   height: 50px;
+  cursor: pointer;
 `
 
 export const NavContainer = styled.nav`

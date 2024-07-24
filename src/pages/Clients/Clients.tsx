@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-import { ClientsPage, Title } from "./styles";
+import { ClientsPage, Title, StyledLink } from "./styles";
 import Button from "components/Button/Button";
 import { StyledNavLink } from "components/Layout/styles";
 
@@ -9,26 +9,15 @@ function Clients() {
   return (
     <ClientsPage>
       <Title>
-        Clients:
-        <StyledNavLink
-          to="/clients/hammer"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? "underline" : "none",
-          })}
-        >Hammer</StyledNavLink>
-        <StyledNavLink
-          to="/clients/robot"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? "underline" : "none",
-          })}
-        >Robot</StyledNavLink>
-        <StyledNavLink
-          to="/clients/wheel"
-          style={({ isActive }) => ({
-            textDecoration: isActive ? "underline" : "none",
-          })}
-        >Wheel</StyledNavLink>
+        Clients:        
       </Title>
+      <StyledLink to="hammer">Hammer</StyledLink>
+        <StyledLink
+          to="robot"
+          >Robot</StyledLink>
+        <StyledLink
+          to="wheel"
+          >Wheel</StyledLink>
       <Button
         name="Go to Home page"
         onButtonClick={() => navigateFunction("/")}
