@@ -7,6 +7,10 @@ import GlobalStyles from "./styes/GlobalStyles";
 import Home from "pages/Home/Home";
 import Users from "pages/Users/Users";
 import About from "pages/About/About";
+import Clients from "pages/Clients/Clients";
+import Hammer from "pages/Clients/Hammer/Hammer";
+import Robot from "pages/Clients/Robot/Robot";
+import Wheel from "pages/Clients/Wheel/Wheel";
 
 
 // Lessons import
@@ -61,6 +65,10 @@ function App() {
           <Route path="/" element={<Home/>}/>
           <Route path="/users" element={<Users/>}/>
           <Route path="/about" element={<About/>}/>
+          <Route path="/clients" element={<Clients/>}/>\
+          <Route path="/clients/hammer" element={<Hammer/>}/>
+          <Route path="/clients/robot" element={<Robot/>}/>
+          <Route path="/clients/wheel" element={<Wheel/>}/>
         </Routes>
       </Layout>
     </BrowserRouter>
