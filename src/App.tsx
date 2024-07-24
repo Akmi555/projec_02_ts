@@ -1,4 +1,13 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import Layout from "components/Layout/Layout";
 import GlobalStyles from "./styes/GlobalStyles";
+
+//Pages
+import Home from "pages/Home/Home";
+import Users from "pages/Users/Users";
+import About from "pages/About/About";
+
 
 // Lessons import
 // import Lesson006 from './lessons/Lesson006/Lesson006';
@@ -19,15 +28,15 @@ import GlobalStyles from "./styes/GlobalStyles";
 // import Homework010 from "./homeworks/Homework010/Homework010";
 // import Homework011 from "./homeworks/Homework011/Homework011";
 // import Homework012 from "homeworks/Homework012/Homework012";
-import Homework014 from "homeworks/Homework014/Homework014";
+// import Homework014 from "homeworks/Homework014/Homework014";
 
 // Consultations import
 // import Consultation04 from "./consultations/Consultations04/Consultation04";
 
 function App() {
   return (
-    <>
-    <GlobalStyles/>
+    <BrowserRouter>
+      <GlobalStyles />
       {/* <Lesson006/> */}
       {/* <Homework006 /> */}
       {/* <Lesson007 /> */}
@@ -45,8 +54,16 @@ function App() {
       {/* <Homework012/> */}
       {/* <Lesson013_P/> */}
       {/* <Lesson014/> */}
-      <Homework014/>
-    </>
+      {/* <Homework014/> */}
+      {/* Lesson015 example with pages */}
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/users" element={<Users/>}/>
+          <Route path="/about" element={<About/>}/>
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 
