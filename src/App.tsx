@@ -1,16 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-// import Layout from "components/Layout/Layout";
+import Layout from "components/Layout/Layout";
 import GlobalStyles from "./styes/GlobalStyles";
 
 //Pages
-// import Home from "pages/Home/Home";
-// import Users from "pages/Users/Users";
-// import About from "pages/About/About";
-// import Clients from "pages/Clients/Clients";
-// import Hammer from "pages/Clients/components/Hammer/Hammer";
-// import Robot from "pages/Clients/components/Robot/Robot";
-// import Wheel from "pages/Clients/components/Wheel/Wheel";
+import Home from "pages/Home/Home";
+import Users from "pages/Users/Users";
+import About from "pages/About/About";
+import Clients from "pages/Clients/Clients";
+import Hammer from "pages/Clients/components/Hammer/Hammer";
+import Robot from "pages/Clients/components/Robot/Robot";
+import Wheel from "pages/Clients/components/Wheel/Wheel";
 
 
 
@@ -25,7 +25,7 @@ import GlobalStyles from "./styes/GlobalStyles";
 // import Lesson012 from "./lessons/Lesson012/Lesson012";
 // import Lesson013_P from "lessons/Lesson013_P/Lesson013_P";
 // import Lesson014 from "lessons/Lesson014/Lesson014";
-import Lesson016 from "lessons/Lesson16/Lesson16/Lesson016";
+// import Lesson016 from "lessons/Lesson16/Lesson16/Lesson016";
 
 //Homeworks import
 // import Homework006 from "./homeworks/Homework006/Homework006";
@@ -63,7 +63,7 @@ function App() {
       {/* <Lesson014/> */}
       {/* <Homework014/> */}
       {/* Lesson015 end Homework015 example with pages */}
-      {/* <Layout>
+      <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/users" element={<Users/>}/>
@@ -74,8 +74,8 @@ function App() {
           <Route path="/clients/wheel" element={<Wheel/>}/>
           <Route path="*" element={'Page not Found'}/>
         </Routes>
-      </Layout> */}
-      <Lesson016/>
+      </Layout>
+      {/* <Lesson016/> */}
     </BrowserRouter>
   );
 }
