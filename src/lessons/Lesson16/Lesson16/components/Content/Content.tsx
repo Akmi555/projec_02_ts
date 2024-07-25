@@ -5,17 +5,19 @@ import { MainCardContext } from "../MainCard/MainCard";
 import NameTitle from "../NameTitle/NameTitle";
 
 function Content() {
-  // 3.
+  //3. Вызываем хук useContext, в который мы передаём контекст 
+  // из которого нужно получить данные. 
+  //При вызове хука данный возвращаются и мы сохраняем их в переменную
 
   const contentData = useContext(MainCardContext)
 
 
   return (
     <ContentComponent>
+      <NameTitle/>
       <DataItem>First Name: {contentData.firstName }</DataItem>
       <DataItem>Last Name: {contentData.lastName }</DataItem>
-      <DataItem>Age: {contentData.age }</DataItem>
-      <NameTitle/>
+      <DataItem>Age: {contentData.age }</DataItem>      
     </ContentComponent>
   )
 }
