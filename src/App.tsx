@@ -2,15 +2,16 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Layout from "components/Layout/Layout";
 import GlobalStyles from "./styes/GlobalStyles";
+import Weather from "pages/Weather/Weather";
 
 //Pages
-import Home from "pages/Home/Home";
-import Users from "pages/Users/Users";
-import About from "pages/About/About";
-import Clients from "pages/Clients/Clients";
-import Hammer from "pages/Clients/components/Hammer/Hammer";
-import Robot from "pages/Clients/components/Robot/Robot";
-import Wheel from "pages/Clients/components/Wheel/Wheel";
+// import Home from "pages/Home/Home";
+// import Users from "pages/Users/Users";
+// import About from "pages/About/About";
+// import Clients from "pages/Clients/Clients";
+// import Hammer from "pages/Clients/components/Hammer/Hammer";
+// import Robot from "pages/Clients/components/Robot/Robot";
+// import Wheel from "pages/Clients/components/Wheel/Wheel";
 
 
 
@@ -63,7 +64,7 @@ function App() {
       {/* <Lesson014/> */}
       {/* <Homework014/> */}
       {/* Lesson015 end Homework015 example with pages */}
-      <Layout>
+      {/* <Layout>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/users" element={<Users/>}/>
@@ -74,8 +75,9 @@ function App() {
           <Route path="/clients/wheel" element={<Wheel/>}/>
           <Route path="*" element={'Page not Found'}/>
         </Routes>
-      </Layout>
+      </Layout> */}
       {/* <Lesson016/> */}
+      <Weather/>
     </BrowserRouter>
   );
 }
