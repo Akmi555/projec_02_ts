@@ -4,8 +4,8 @@ export const ContentComponent = styled.div`
    display: flex;
    flex-direction: column;
    align-items: center;
-   gap: 20px;
-   padding: 20px;
+   gap: 10px;
+   padding: 10px;
    background: #85F1DC;
 `
 

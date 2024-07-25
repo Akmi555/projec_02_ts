@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import { ContentComponent, DataItem } from "./styles"
 import { MainCardContext } from "../MainCard/MainCard";
+import NameTitle from "../NameTitle/NameTitle";
 
 function Content() {
   // 3.
@@ -14,6 +15,7 @@ function Content() {
       <DataItem>First Name: {contentData.firstName }</DataItem>
       <DataItem>Last Name: {contentData.lastName }</DataItem>
       <DataItem>Age: {contentData.age }</DataItem>
+      <NameTitle/>
     </ContentComponent>
   )
 }

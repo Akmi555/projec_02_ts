@@ -5,7 +5,7 @@ export const MainCardWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 30px;
-  width: 700px;
+  width: 900px;
   padding: 30px;
   background: #71ABF1;
 `
