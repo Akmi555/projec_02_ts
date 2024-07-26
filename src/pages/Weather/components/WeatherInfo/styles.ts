@@ -1,6 +1,7 @@
-import styled from '@emotion/styled'
+import styled from "@emotion/styled";
 
 export const WeatherData = styled.div`
- display: flex;
- 
-`
+  display: flex;
+  height: 100px;
+  width: 600px;
+`;
