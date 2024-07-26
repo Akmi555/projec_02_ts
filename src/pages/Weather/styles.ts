@@ -20,6 +20,7 @@ export const WeatherTitle = styled.header`
 export const WeatherMain = styled.main`
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   
   height: 90%;
@@ -28,7 +29,7 @@ export const WeatherMain = styled.main`
 `;
 
 
-export const InputContainer = styled.div`
+export const InputContainer = styled.form`
   display: flex;
   height: 30px;
   width: 600px;
