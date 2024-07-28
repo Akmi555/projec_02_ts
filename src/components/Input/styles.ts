@@ -17,9 +17,11 @@ export const InputElement = styled.input`
   height: 30px;
   padding: 12px;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 30px;
   font-size: 14px;
+  background-color: rgba(128, 157, 255, 0.5);
+  color: white;
 
   &::placeholder {
     color: #a19f9f;

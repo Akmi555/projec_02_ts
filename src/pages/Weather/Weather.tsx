@@ -3,6 +3,7 @@ import { useFormik } from "formik";
 
 import {
   InputContainer,
+  OutputContainer,
   WeatherMain,
   WeatherPage,
   WeatherTitle,
@@ -13,33 +14,42 @@ import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import { weatherValues } from "./types";
 
+
+
 function Weather() {
-  const [resultValue, setResultValue] = useState<string>("");  
+  const [resultValue, setResultValue] = useState<string[]>([]);
   const APP_ID = "87fa0bcb59d5a617c173ca4eafc92f76";
-  
-   const formik = useFormik({
+
+  const formik = useFormik({
     initialValues: {
       city: "",
     } as weatherValues,
     validateOnChange: false,
-    onSubmit: (values: weatherValues) => {      
+    onSubmit: (values: weatherValues) => {
       getWeatherInfo(values.city);
     },
   });
   // console.log(formik);
 
   const getWeatherInfo = async (CITY_NAME: string) => {
-    // const CITY_NAME = formik.values.city;    
+    // const CITY_NAME = formik.values.city;
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${APP_ID}`
     );
-    console.log(response);
+    // console.log(response);
     const result = await response.json();
     console.log(result);
-    setResultValue(result.fact);
+    // setResultValue(result.main.temp);
+    setResultValue([
+      result.main.temp, 
+      result.name, 
+      result.main.humidity, 
+      result.main.pressure, 
+      result.weather[0].icon
+    ]);
   };
 
- 
+  console.log(resultValue);
 
   return (
     <WeatherPage>
@@ -54,8 +64,11 @@ function Weather() {
           />
           <Button name="Получить погоду" type="submit" />
         </InputContainer>
-        <WeatherInfo />
-        <WeatherError />
+        <OutputContainer>
+          {resultValue}
+          <WeatherInfo />
+          <WeatherError />
+        </OutputContainer>
       </WeatherMain>
     </WeatherPage>
   );
