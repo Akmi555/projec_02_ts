@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useFormik } from "formik";
 
 import {
@@ -14,7 +14,7 @@ import Button from "components/Button/Button";
 import Input from "components/Input/Input";
 import { weatherValues } from "./types";
 
-
+export const MainWeatherContext = createContext<string[]>([]);
 
 function Weather() {
   const [resultValue, setResultValue] = useState<string[]>([]);
@@ -36,18 +36,21 @@ function Weather() {
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${APP_ID}`
     );
-    // console.log(response);
+    console.log(response);
     const result = await response.json();
     console.log(result);
     // setResultValue(result.main.temp);
     setResultValue([
-      result.main.temp, 
-      result.name, 
-      result.main.humidity, 
-      result.main.pressure, 
-      result.weather[0].icon
+      (result.main.temp - 273.15).toFixed(1),
+      result.name,
+      result.weather[0].icon,
+      (result.main.feels_like- 273.15).toFixed(1),
     ]);
   };
+
+  // useEffect(() => {
+  //   console.log("Component did update");
+  // }, [Button]);
 
   console.log(resultValue);
 
@@ -64,11 +67,13 @@ function Weather() {
           />
           <Button name="Получить погоду" type="submit" />
         </InputContainer>
-        <OutputContainer>
-          {resultValue}
-          <WeatherInfo />
-          <WeatherError />
-        </OutputContainer>
+        <MainWeatherContext.Provider value={resultValue}>
+          <OutputContainer>
+            {resultValue}
+            <WeatherInfo />
+            <WeatherError />
+          </OutputContainer>
+        </MainWeatherContext.Provider>
       </WeatherMain>
     </WeatherPage>
   );

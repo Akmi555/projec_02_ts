@@ -11,13 +11,14 @@ export const WeatherPage = styled.div`
 `;
 export const WeatherTitle = styled.header`
   display: flex;
-  width: 100%;
-  height: 40px;
+  width: 1,920px;
+  height: 80px;
   justify-content: center;
-  padding: 10px;
-  font-size: 16px;
-  background-color: rgba(45, 70, 100, 0.8);
-  border-color: white;
+  padding: 20px;
+  font-size: 29px;
+  background-color: rgba(18, 45, 77, 0.5);
+  border: 1px;
+  border-color:  white;
   color: white;
 `;
 
@@ -25,8 +26,7 @@ export const WeatherMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  
+  justify-content: center;  
   height: 90%;
   width: 100%;
   gap: 40px;
@@ -34,13 +34,19 @@ export const WeatherMain = styled.main`
 
 export const InputContainer = styled.form`
   display: flex;
-  height: 30px;
-  width: 600px;
-  gap: 10px;
+  top: 220px;
+  left: 605px;
+  gap: 14px;
+  height: 48px;
+  width: 710px;
 `;
 
 export const OutputContainer = styled.div`
   display: flex;
-  height: 200px;
-  width: 600px;  
+  flex-direction: column;
+  height: 302px;
+  width: 710px;  
+  top: 328px;
+  left: 605px;
+  gap: 20px;
 `;

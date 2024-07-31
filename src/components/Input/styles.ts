@@ -4,7 +4,8 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
   /* gap: 4px; */
-  width: 400px;
+  width: 550px;
+  height: 68px;
 `;
 
 export const Label = styled.label`
@@ -13,14 +14,15 @@ export const Label = styled.label`
 `;
 
 export const InputElement = styled.input`
-  width: 400px;
-  height: 30px;
-  padding: 12px;
+  width: 550px;
+  height: 48px;
+  padding-left: 12px;
+  /* gap: 10px; */
   outline: none;
   border: 1px solid white;
-  border-radius: 30px;
-  font-size: 14px;
-  background-color: rgba(128, 157, 255, 0.5);
+  border-radius: 40px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
   color: white;
 
   &::placeholder {
