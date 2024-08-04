@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 import { useFormik } from "formik";
 
 import {
@@ -18,7 +18,11 @@ export const MainWeatherContext = createContext<string[]>([]);
 
 function Weather() {
   const [resultValue, setResultValue] = useState<string[]>([]);
+  // const [errorValue, setErrorValue] = useState<string[]>([]);
   const APP_ID = "87fa0bcb59d5a617c173ca4eafc92f76";
+
+  // console.log('test1');
+  
 
   const formik = useFormik({
     initialValues: {
@@ -39,20 +43,26 @@ function Weather() {
     console.log(response);
     const result = await response.json();
     console.log(result);
-    // setResultValue(result.main.temp);
+    if (response.ok) {
+      // setResultValue(result.main.temp);
     setResultValue([
-      (result.main.temp - 273.15).toFixed(1),
+      (result.main.temp - 273.15).toFixed(0),
       result.name,
       result.weather[0].icon,
-      (result.main.feels_like- 273.15).toFixed(1),
+      (result.main.feels_like- 273.15).toFixed(0),
     ]);
+    } else {
+      setResultValue([
+        result.cod,
+        result.message,
+      ]);
+    }    
   };
-
-  // useEffect(() => {
-  //   console.log("Component did update");
-  // }, [Button]);
-
+  
   console.log(resultValue);
+
+  // console.log('test2');
+  
 
   return (
     <WeatherPage>
@@ -69,7 +79,6 @@ function Weather() {
         </InputContainer>
         <MainWeatherContext.Provider value={resultValue}>
           <OutputContainer>
-            {resultValue}
             <WeatherInfo />
             <WeatherError />
           </OutputContainer>
