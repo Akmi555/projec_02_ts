@@ -2,17 +2,16 @@ import styled from '@emotion/styled'
 
 
 export const WeatherEr = styled.div`
-  display: flex;
-  justify-content: center;
+  display: flex;  
   gap: 20px;
   height: 100%;
-  width: 100%;
-  
+  width: 100%;  
 `;
 
 export const WeatherErContainer = styled.div`
   display: flex;
-  flex-direction: column;  
+  flex-direction: column; 
+  align-items: center; 
   height: 130px;  
   width: 100%;
   gap: 30px;

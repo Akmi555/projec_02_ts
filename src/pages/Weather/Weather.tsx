@@ -29,14 +29,16 @@ function Weather() {
       city: "",
     } as weatherValues,
     validateOnChange: false,
-    onSubmit: (values: weatherValues) => {
+    onSubmit: (values: weatherValues, {resetForm}) => {
       getWeatherInfo(values.city);
+      resetForm()
     },
   });
   // console.log(formik);
 
   const getWeatherInfo = async (CITY_NAME: string) => {
     // const CITY_NAME = formik.values.city;
+    setResultValue([]);
     const response = await fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${CITY_NAME}&appid=${APP_ID}`
     );
@@ -45,24 +47,31 @@ function Weather() {
     console.log(result);
     if (response.ok) {
       // setResultValue(result.main.temp);
-    setResultValue([
+    setResultValue((prevValue) => [ ...prevValue, 
       (result.main.temp - 273.15).toFixed(0),
       result.name,
       result.weather[0].icon,
       (result.main.feels_like- 273.15).toFixed(0),
     ]);
+    weatherInfo()
     } else {
-      setResultValue([
+      setResultValue((prevValue) => [...prevValue,
         result.cod,
-        result.message,
+        result.message, 
       ]);
+      weatherError()
     }    
   };
   
   console.log(resultValue);
 
-  // console.log('test2');
+  const weatherInfo = () => {
+    return <WeatherInfo />
+  }
   
+  const weatherError = () => {
+    return <WeatherError />
+  }
 
   return (
     <WeatherPage>
@@ -79,8 +88,10 @@ function Weather() {
         </InputContainer>
         <MainWeatherContext.Provider value={resultValue}>
           <OutputContainer>
-            <WeatherInfo />
-            <WeatherError />
+          {weatherInfo()}
+          {weatherError()}
+            {/* {weatherInfoOutput}
+            {weatherErrorOutput} */}
           </OutputContainer>
         </MainWeatherContext.Provider>
       </WeatherMain>
