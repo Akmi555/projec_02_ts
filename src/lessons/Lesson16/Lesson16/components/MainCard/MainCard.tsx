@@ -28,7 +28,7 @@ function MainCard() {
         {/* <Section data={userData}/> */}
         <Section />
       </MainCardWrapper>
-      </MainCardContext.Provider>
+    </MainCardContext.Provider>
   )
 }
 

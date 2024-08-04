@@ -3,8 +3,9 @@ import styled from "@emotion/styled";
 export const InputContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  width: 100%;
+  /* gap: 4px; */
+  width: 550px;
+  height: 68px;
 `;
 
 export const Label = styled.label`
@@ -13,13 +14,16 @@ export const Label = styled.label`
 `;
 
 export const InputElement = styled.input`
-  width: 100%;
-  height: 50px;
-  padding: 12px;
+  width: 550px;
+  height: 48px;
+  padding-left: 12px;
+  /* gap: 10px; */
   outline: none;
-  border: 1px solid black;
-  border-radius: 4px;
-  font-size: 16px;
+  border: 1px solid white;
+  border-radius: 40px;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
 
   &::placeholder {
     color: #a19f9f;

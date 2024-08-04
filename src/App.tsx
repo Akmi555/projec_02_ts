@@ -4,6 +4,7 @@ import Layout from "components/Layout/Layout";
 import GlobalStyles from "./styes/GlobalStyles";
 import Weather from "pages/Weather/Weather";
 
+
 //Pages
 // import Home from "pages/Home/Home";
 // import Users from "pages/Users/Users";
@@ -40,6 +41,7 @@ import Weather from "pages/Weather/Weather";
 
 // Consultations import
 // import Consultation04 from "./consultations/Consultations04/Consultation04";
+// import Consultation07 from "consultations/Consultation07/Consultation07";
 
 function App() {
   return (
@@ -77,6 +79,7 @@ function App() {
         </Routes>
       </Layout> */}
       {/* <Lesson016/> */}
+      {/* <Consultation07/> */}
       <Weather/>
     </BrowserRouter>
   );
