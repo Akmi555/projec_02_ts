@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "components/Layout/Layout";
 import GlobalStyles from "./styes/GlobalStyles";
 import Weather from "pages/Weather/Weather";
+import ToDoList from "components/ToDoList/ToDoList";
 
 
 //Pages
@@ -79,8 +80,9 @@ function App() {
         </Routes>
       </Layout> */}
       {/* <Lesson016/> */}
+      <ToDoList/>
       {/* <Consultation07/> */}
-      <Weather/>
+      {/* <Weather/> */}
     </BrowserRouter>
   );
 }

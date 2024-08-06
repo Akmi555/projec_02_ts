@@ -1,62 +1,81 @@
 import { useFormik } from "formik";
-import { InputButton, InputForm, InputFormContainer, TaskContainer, TaskItem, TaskRemoveButton, Title, ToDoListContainer } from "./styles";
+import {
+  InputButton,
+  InputForm,
+  InputFormContainer,
+  TaskContainer,
+  TaskItem,
+  TaskRemoveButton,
+  Title,
+  ToDoListContainer,
+} from "./styles";
 import { useState } from "react";
-import * as Yup from 'yup';
+import * as Yup from "yup";
 import { v4 } from "uuid";
 
 interface IFormValues {
-  inputData: string
+  inputData: string;
 }
 
 interface ITask {
-  id: string,
-  taskText: string
+  id: string;
+  taskText: string;
 }
-
 
 export default function ToDoList() {
   const [taskList, setTaskList] = useState<ITask[]>([]);
 
   const schema = Yup.object().shape({
-    inputData: Yup
-    .string()
-    .required('type smthn')
-})
+    inputData: Yup.string().required("type smthn"),
+  });
 
   const formik = useFormik({
     initialValues: {
-            inputData: ''
-        } as IFormValues,
-        validationSchema: schema,
-        validateOnChange: false,
-        onSubmit: (values: IFormValues, { resetForm }) => {
-            console.log(values);
-            setTaskList((prevValue) => [...prevValue, {id: v4(), taskText: values.inputData}])
-            resetForm()
-        }
-  })
+      inputData: "",
+    } as IFormValues,
+    validationSchema: schema,
+    validateOnChange: false,
+    onSubmit: (values: IFormValues, { resetForm }) => {
+      console.log(values);
+      setTaskList((prevValue) => [
+        ...prevValue,
+        { id: v4(), taskText: values.inputData },
+      ]);
+      resetForm();
+    },
+  });
 
   const removeTask = (taskToRemove: ITask) => {
-    setTaskList(taskList.filter(task => task !== taskToRemove))
-}
+    setTaskList(taskList.filter((task) => task !== taskToRemove));
+  };
 
-const taskListOutput = taskList.map((task) => {
-        return (
-            <TaskContainer key={v4()}>
-                <TaskItem >{task.taskText}</TaskItem>
-                <TaskRemoveButton>❌</TaskRemoveButton>
-            </TaskContainer>
-        )
-    })
+  const taskListOutput = taskList.map((task, index) => {
+    return (
+      <TaskContainer key={v4()}>
+        {/* {index === taskList.length - 1 ? (
+          <LastTaskItem>{task.taskText}</LastTaskItem>
+        ) : (
+          <TaskItem>{task.taskText}</TaskItem>
+        )} */}
+        <TaskItem isLast={index === taskList.length - 1 }>{task.taskText}</TaskItem>
+        <TaskRemoveButton onClick={() => removeTask(task)}>❌</TaskRemoveButton>
+      </TaskContainer>
+    );
+  });
 
   return (
     <ToDoListContainer>
       <Title>ToDo list from consultation 5 📋</Title>
       <InputFormContainer onSubmit={formik.handleSubmit}>
-        <InputForm onChange={formik.handleChange} name='inputData' value={formik.values.inputData} placeholder="input task"></InputForm>
+        <InputForm
+          onChange={formik.handleChange}
+          name="inputData"
+          value={formik.values.inputData}
+          placeholder="input task"
+        ></InputForm>
         <InputButton>add task</InputButton>
       </InputFormContainer>
-      {taskListOutput}     
+      {taskListOutput}
     </ToDoListContainer>
   );
 }
