@@ -12,26 +12,26 @@ import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 import WeatherError from "./components/WeatherError/WeatherError";
 import Button from "components/Button/Button";
 import Input from "components/Input/Input";
-import { weatherValues } from "./types";
+import { ErrorValue, WeatherValues } from "./types";
+import Spinner from "components/Spinner/Spinner";
 
 export const MainWeatherContext = createContext<string[]>([]);
 
 function Weather() {
   const [resultValue, setResultValue] = useState<string[]>([]);
-  // const [errorValue, setErrorValue] = useState<string[]>([]);
+  const [errorValue, setErrorValue] = useState<ErrorValue | null>(null);
   const APP_ID = "87fa0bcb59d5a617c173ca4eafc92f76";
 
   // console.log('test1');
-  
 
   const formik = useFormik({
     initialValues: {
       city: "",
-    } as weatherValues,
+    } as WeatherValues,
     validateOnChange: false,
-    onSubmit: (values: weatherValues, {resetForm}) => {
+    onSubmit: (values: WeatherValues, { resetForm }) => {
       getWeatherInfo(values.city);
-      resetForm()
+      resetForm();
     },
   });
   // console.log(formik);
@@ -47,32 +47,24 @@ function Weather() {
     console.log(result);
     if (response.ok) {
       // setResultValue(result.main.temp);
-    setResultValue((prevValue) => [ ...prevValue, 
-      (result.main.temp - 273.15).toFixed(0),
-      result.name,
-      result.weather[0].icon,
-      (result.main.feels_like- 273.15).toFixed(0),
-    ]);
-    weatherInfo()
-    } else {
-      setResultValue((prevValue) => [...prevValue,
-        result.cod,
-        result.message, 
+      setResultValue((prevValue) => [
+        ...prevValue,
+        (result.main.temp - 273.15).toFixed(0),
+        result.name,
+        result.weather[0].icon,
+        (result.main.feels_like - 273.15).toFixed(0),
       ]);
-      weatherError()
-    }    
+    } else {
+      setErrorValue({
+        cod: result.cod,
+        message: result.message,
+       });      
+    }
   };
-  
+
   console.log(resultValue);
 
-  const weatherInfo = () => {
-    return <WeatherInfo />
-  }
-  
-  const weatherError = () => {
-    return <WeatherError />
-  }
-
+ 
   return (
     <WeatherPage>
       <WeatherTitle>Weather App</WeatherTitle>
@@ -88,10 +80,9 @@ function Weather() {
         </InputContainer>
         <MainWeatherContext.Provider value={resultValue}>
           <OutputContainer>
-          {weatherInfo()}
-          {weatherError()}
-            {/* {weatherInfoOutput}
-            {weatherErrorOutput} */}
+            {errorValue && errorValue && <Spinner/>}
+            {/* <WeatherInfo /> */}
+           { errorValue && <WeatherError errorData= {errorValue}/> }           
           </OutputContainer>
         </MainWeatherContext.Provider>
       </WeatherMain>
