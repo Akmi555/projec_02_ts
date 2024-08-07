@@ -3,13 +3,14 @@ import { useContext } from "react"
 import { WeatherCodData, WeatherEr, WeatherErContainer, WeatherMassageData } from "./styles";
 import { MainWeatherContext } from "pages/Weather/Weather"
 
-function WeatherError() {
+function WeatherError({errorData}: any) {
   const contentData = useContext(MainWeatherContext)
+  console.log(errorData);
 
   return <WeatherEr>
     <WeatherErContainer>
-      <WeatherCodData>{contentData[0]}</WeatherCodData>
-      <WeatherMassageData>{contentData[1]}</WeatherMassageData>
+      <WeatherCodData>{errorData.cod}</WeatherCodData>
+      <WeatherMassageData>{errorData.message}</WeatherMassageData>
     </WeatherErContainer>
   </WeatherEr>
 }
