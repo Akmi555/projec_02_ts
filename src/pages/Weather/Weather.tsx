@@ -1,13 +1,7 @@
 import { createContext, useState } from "react";
 import { useFormik } from "formik";
 
-import {
-  InputContainer,
-  OutputContainer,
-  WeatherMain,
-  WeatherPage,
-  WeatherTitle,
-} from "./styles";
+import {  InputContainer,  OutputContainer,  WeatherMain,  WeatherPage,  WeatherTitle,} from "./styles";
 import WeatherInfo from "./components/WeatherInfo/WeatherInfo";
 import WeatherError from "./components/WeatherError/WeatherError";
 import Button from "components/Button/Button";
@@ -80,7 +74,7 @@ function Weather() {
         </InputContainer>
         <MainWeatherContext.Provider value={resultValue}>
           <OutputContainer>
-            {errorValue && errorValue && <Spinner/>}
+            {resultValue && errorValue && <Spinner/>}
             {/* <WeatherInfo /> */}
            { errorValue && <WeatherError errorData= {errorValue}/> }           
           </OutputContainer>
